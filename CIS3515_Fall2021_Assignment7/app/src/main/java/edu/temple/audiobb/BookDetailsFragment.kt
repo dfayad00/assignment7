@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 
@@ -12,6 +13,7 @@ class BookDetailsFragment : Fragment() {
 
     lateinit var titleTextView: TextView
     lateinit var authorTextView: TextView
+    lateinit var bookCoverImage: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

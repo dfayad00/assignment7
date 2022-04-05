@@ -3,6 +3,7 @@ package edu.temple.audiobb
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +18,7 @@ class BookListAdapter (_bookList: BookList, _onClick: (Book) -> Unit) : Recycler
     class BookViewHolder (layout : View, onClick : (Book) -> Unit): RecyclerView.ViewHolder (layout) {
         val titleTextView : TextView
         val authorTextView: TextView
+
         lateinit var book: Book
         init {
             titleTextView = layout.findViewById(R.id.titleTextView)

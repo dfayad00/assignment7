@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">AudioBB</string>
+    <string name="author_placeholder">book author</string>
+    <string name="title_placeholder">Book Title</string>
+    <string name="search_hint">Search books</string>
 </resources>
