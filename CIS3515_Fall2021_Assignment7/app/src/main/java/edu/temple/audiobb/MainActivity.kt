@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -18,6 +19,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
+import org.w3c.dom.Text
 import java.net.URL
 
 
@@ -94,7 +96,8 @@ class MainActivity : AppCompatActivity(), BookListFragment.BookSelectedInterface
                 null,
                 {
                     jsonObject ->
-
+                        findViewById<TextView>(R.id.authorTextView).text = jsonObject.getString("author")
+                        findViewById<TextView>(R.id.titleTextView).text = jsonObject.getString("title")
                 },
                 {
                     Log.e("Response Error", it.toString())
