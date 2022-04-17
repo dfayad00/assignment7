@@ -69,18 +69,6 @@ class MainActivity : AppCompatActivity(), BookListFragment.BookSelectedInterface
         findViewById<ImageButton>(R.id.searchButton).setOnClickListener {
             onSearchRequested()
         }
-
-        findViewById<Button>(R.id.playButton).setOnClickListener {
-            val intent = Intent(this, PlayerService::class.java)
-            val connection = object: ServiceConnection {
-                override fun onServiceConnected(p0: ComponentName?, p1: IBinder?) {}
-
-                override fun onServiceDisconnected(p0: ComponentName?) {}
-            }
-
-            this.bindService(intent, connection, 0)
-            startService(intent)
-        }
     }
 
     override fun onNewIntent(intent: Intent?) {
