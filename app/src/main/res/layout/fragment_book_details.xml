@@ -54,4 +54,14 @@
         app:layout_constraintVertical_bias="1.0"
         tools:src="@tools:sample/avatars" />
 
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="115dp"
+        android:text="@string/play"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,14 +5,17 @@ import android.os.Parcelable
 import org.json.JSONObject
 
 // Simple data class
-data class Book(val id: Int, val title: String, val author: String, val coverURL: String) : Parcelable {
+data class Book(val id: Int, val title: String, val author: String, val duration: Int,
+                val coverURL: String) : Parcelable {
 
-    constructor(book: JSONObject) : this(book.getInt("id"), book.getString("title"), book.getString("author"), book.getString("cover_url"))
+    constructor(book: JSONObject) : this(book.getInt("id"), book.getString("title"),
+        book.getString("author"), book.getInt("duration"), book.getString("cover_url"))
 
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString()!!,
         parcel.readString()!!,
+        parcel.readInt(),
         parcel.readString()!!
     )
 

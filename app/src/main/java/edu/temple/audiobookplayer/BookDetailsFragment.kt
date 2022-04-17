@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
@@ -15,6 +16,7 @@ class BookDetailsFragment : Fragment() {
     private lateinit var titleTextView: TextView
     private lateinit var authorTextView: TextView
     private lateinit var coverImageView: ImageView
+    private lateinit var playButton: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,6 +27,7 @@ class BookDetailsFragment : Fragment() {
         titleTextView = layout.findViewById(R.id.titleTextView)
         authorTextView = layout.findViewById(R.id.authorTextView)
         coverImageView = layout.findViewById(R.id.bookCoverImageView)
+        playButton = layout.findViewById(R.id.playButton)
 
         return layout
     }

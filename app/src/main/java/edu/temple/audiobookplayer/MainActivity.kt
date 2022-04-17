@@ -1,16 +1,21 @@
 package edu.temple.audiobookplayer
 
 import android.app.SearchManager
+import android.app.Service
+import android.content.ComponentName
 import android.content.Intent
+import android.content.ServiceConnection
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.os.IBinder
 import android.view.View
+import android.widget.Button
 import android.widget.ImageButton
 import androidx.lifecycle.ViewModelProvider
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
+import edu.temple.audlibplayer.PlayerService
 
 class MainActivity : AppCompatActivity(), BookListFragment.BookSelectedInterface {
 
@@ -65,6 +70,17 @@ class MainActivity : AppCompatActivity(), BookListFragment.BookSelectedInterface
             onSearchRequested()
         }
 
+        findViewById<Button>(R.id.playButton).setOnClickListener {
+            val intent = Intent(this, PlayerService::class.java)
+            val connection = object: ServiceConnection {
+                override fun onServiceConnected(p0: ComponentName?, p1: IBinder?) {}
+
+                override fun onServiceDisconnected(p0: ComponentName?) {}
+            }
+
+            this.bindService(intent, connection, 0)
+            startService(intent)
+        }
     }
 
     override fun onNewIntent(intent: Intent?) {
